@@ -1,7 +1,12 @@
 {
-	"name": "talks",
-	"private": true,
+	"name": "mdx-frisson",
+	"description": "Beautiful MDX, great DX",
 	"version": "0.0.1",
+	"author": {
+		"name": "Sreetam Das",
+		"url": "https://github.com/sreetamdas"
+	},
+	"license": "MIT",
 	"type": "module",
 	"scripts": {
 		"dev": "vite",
