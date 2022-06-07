@@ -14,11 +14,14 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
+		"@mdx-js/mdx": "^2.1.1",
 		"@mdx-js/react": "^2.1.1",
 		"@mdx-js/rollup": "^2.1.1",
 		"@types/mdx": "^2.0.2",
+		"@types/node": "^17.0.40",
 		"react": "^18.0.0",
-		"react-dom": "^18.0.0"
+		"react-dom": "^18.0.0",
+		"unist-util-visit": "^4.1.0"
 	},
 	"devDependencies": {
 		"@types/react": "^18.0.0",

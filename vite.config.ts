@@ -7,5 +7,13 @@ export default defineConfig({
 	optimizeDeps: {
 		include: ["react/jsx-runtime"],
 	},
-	plugins: [mdx({}), react()],
+	plugins: [
+		mdx({
+			rehypePlugins: [
+				//
+				// rehypeSplitMDX,
+			],
+		}),
+		react(),
+	],
 });
