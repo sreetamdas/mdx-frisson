@@ -1,15 +1,14 @@
 {
-	"name": "mdx-frisson",
+	"name": "monorepo",
 	"description": "Beautiful MDX, great DX",
 	"version": "0.0.1",
-	"main": "src/main.ts",
 	"author": {
 		"name": "Sreetam Das",
 		"url": "https://github.com/sreetamdas"
 	},
 	"license": "MIT",
 	"type": "module",
-	"homepage": "https://github.com/sreetamdas/mdx-frisson#readme",
+	"homepage": "https://github.com/sreetamdas/mdx-frisson",
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/sreetamdas/mdx-frisson.git"
@@ -21,6 +20,7 @@
 	"engines": {
 		"pnpm": "^7.0.0"
 	},
+	"private": true,
 	"devDependencies": {
 		"@types/node": "^17.0.41",
 		"@typescript-eslint/eslint-plugin": "^5.27.1",
