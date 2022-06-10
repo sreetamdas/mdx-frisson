@@ -1,7 +1,7 @@
 {
 	"name": "mdx-frisson",
 	"description": "Beautiful MDX, great DX",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"main": "src/main.ts",
 	"author": {
 		"name": "Sreetam Das",
