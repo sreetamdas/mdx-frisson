@@ -1,0 +1,23 @@
+{
+	"name": "mdx-frisson-starter",
+	"private": true,
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"@types/node": "^17.0.41",
+		"mdx-frisson": "^0.0.1",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0"
+	},
+	"devDependencies": {
+		"@types/react": "^18.0.12",
+		"@types/react-dom": "^18.0.0",
+		"@vitejs/plugin-react": "^1.3.0",
+		"typescript": "^4.6.3",
+		"vite": "^2.9.9"
+	}
+}
