@@ -13,6 +13,10 @@ MDX Deck so good you get _the chills_. 😮‍💨
 - ⚡ Vite
 - ⚛️ React
 
+## Usage
+
+mdx-frisson **is under active development**, so there is additional setup needed to use it.
+
 ### Inspiration
 
 - [MDX Deck](https://github.com/jxnblk/mdx-deck)

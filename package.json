@@ -9,10 +9,17 @@
 	},
 	"license": "MIT",
 	"type": "module",
-	"scripts": {
-		"dev": "vite",
-		"build": "tsc && vite build",
-		"preview": "vite preview"
+	"homepage": "https://github.com/sreetamdas/mdx-frisson#readme",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sreetamdas/mdx-frisson.git"
+	},
+	"bugs": {
+		"url": "https://github.com/sreetamdas/mdx-frisson/issues"
+	},
+	"packageManager": "pnpm@7.2.0",
+	"engines": {
+		"pnpm": "^7.0.0"
 	},
 	"devDependencies": {
 		"@types/node": "^17.0.41",
