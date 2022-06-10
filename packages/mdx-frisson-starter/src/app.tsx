@@ -1,10 +1,10 @@
-import { MDXProvider } from "@mdx-js/react";
-import { bundleMDXDeck } from "mdx-frisson";
-import { run } from "@mdx-js/mdx";
-import * as runtime from "react/jsx-runtime";
-
-import Deck from "./deck.mdx?raw";
 import { useEffect, useState } from "react";
+import * as runtime from "react/jsx-runtime";
+import { run } from "@mdx-js/mdx";
+import { bundleMDXDeck } from "mdx-frisson";
+
+// ?raw to import as string
+import Deck from "./deck.mdx?raw";
 
 async function getBundle() {
 	const { default: Content } = await run(
@@ -21,7 +21,6 @@ export const App = () => {
 	const [component, setComponent] = useState();
 	async function load() {
 		const res = await getBundle();
-		console.log(res);
 
 		setComponent(res);
 	}
@@ -30,19 +29,7 @@ export const App = () => {
 		load();
 	}, []);
 
-	// if (window) {
-	console.log(window.location.href);
-	// }
-
 	return <div className="App">{component}</div>;
 };
 
 export default App;
-
-/**
- * Get "a" or "an" based on the first letter of the string
- * @param word
- */
-function getArticle(word: string) {
-	//
-}
