@@ -21,7 +21,6 @@
 	"engines": {
 		"pnpm": "^7.0.0"
 	},
-	"private": true,
 	"scripts": {
 		"dev": "vite",
 		"build": "tsc && vite build",
