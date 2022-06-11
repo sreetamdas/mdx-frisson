@@ -8,12 +8,15 @@
 		"strict": true,
 		"sourceMap": true,
 		"resolveJsonModule": true,
+		"incremental": true,
 		"isolatedModules": true,
 		"esModuleInterop": true,
 		"noEmit": true,
 		"noUnusedLocals": true,
 		"noUnusedParameters": true,
+		"noImplicitAny": true,
 		"noImplicitReturns": true,
 		"skipLibCheck": true
-	}
+	},
+	"exclude": ["node_modules", "bin", "dist"]
 }
