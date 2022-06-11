@@ -31,6 +31,7 @@
 	"scripts": {
 		"dev": "vite",
 		"build": "rimraf dist && tsc",
+		"prepublishOnly": "pnpm run build",
 		"preview": "vite preview",
 		"lint": "eslint src --cache --fix",
 		"lint:check": "eslint src --cache",
