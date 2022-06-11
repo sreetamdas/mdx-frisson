@@ -3,6 +3,7 @@
 	"description": "Beautiful MDX, great DX",
 	"version": "0.1.0",
 	"main": "src/main.ts",
+	"types": "types",
 	"author": {
 		"name": "Sreetam Das",
 		"url": "https://github.com/sreetamdas"
@@ -29,7 +30,7 @@
 	],
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc && vite build",
+		"build": "rimraf dist && tsc",
 		"preview": "vite preview",
 		"lint": "eslint src --cache --fix",
 		"lint:check": "eslint src --cache",
