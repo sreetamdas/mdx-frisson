@@ -1,7 +1,33 @@
 {
 	"name": "mdx-frisson-starter",
+	"description": "Starter repo for mdx-frisson",
 	"private": true,
-	"version": "1.0.0",
+	"version": "0.1.0",
+	"author": {
+		"name": "Sreetam Das",
+		"url": "https://github.com/sreetamdas"
+	},
+	"license": "MIT",
+	"type": "module",
+	"homepage": "https://github.com/sreetamdas/mdx-frisson",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sreetamdas/mdx-frisson.git",
+		"directory": "packages/mdx-frisson-starter"
+	},
+	"bugs": {
+		"url": "https://github.com/sreetamdas/mdx-frisson/issues"
+	},
+	"packageManager": "pnpm@7.2.0",
+	"engines": {
+		"pnpm": "^7.0.0"
+	},
+	"keywords": [
+		"mdx",
+		"mdx slides",
+		"mdx-deck",
+		"mdx slides starter"
+	],
 	"scripts": {
 		"dev": "vite",
 		"lint": "eslint src",
@@ -9,8 +35,9 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@types/node": "^17.0.41",
-		"mdx-frisson": "^0.0.1",
+		"@mdx-js/mdx": "^2.1.1",
+		"@types/node": "^17.0.42",
+		"mdx-frisson": "latest",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0"
 	},

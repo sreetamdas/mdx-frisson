@@ -1,5 +1,5 @@
 {
-	"name": "monorepo",
+	"name": "mdx-frisson-monorepo",
 	"description": "Beautiful MDX, great DX",
 	"version": "0.0.1",
 	"author": {
@@ -21,8 +21,14 @@
 		"pnpm": "^7.0.0"
 	},
 	"private": true,
+	"scripts": {
+		"build": "turbo run build",
+		"test": "turbo run test",
+		"lint": "turbo run lint",
+		"dev": "turbo run dev"
+	},
 	"devDependencies": {
-		"@types/node": "^17.0.41",
+		"@types/node": "^17.0.42",
 		"@typescript-eslint/eslint-plugin": "^5.27.1",
 		"@typescript-eslint/parser": "^5.27.1",
 		"eslint": "^8.17.0",
