@@ -23,5 +23,6 @@
 				"singleQuote": false
 			}
 		]
-	}
+	},
+	"ignorePatterns": ["node_modules", "dist"]
 }
