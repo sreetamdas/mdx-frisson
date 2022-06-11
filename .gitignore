@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 .turbo
+
+# Caches
+.eslintcache
+tsconfig.tsbuildinfo

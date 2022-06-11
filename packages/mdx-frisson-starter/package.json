@@ -30,9 +30,11 @@
 	],
 	"scripts": {
 		"dev": "vite",
-		"lint": "eslint src",
 		"build": "tsc && vite build",
-		"preview": "vite preview"
+		"preview": "vite preview",
+		"lint": "eslint src --cache --fix",
+		"lint:check": "eslint src --cache",
+		"compile": "tsc --watch"
 	},
 	"dependencies": {
 		"@mdx-js/mdx": "^2.1.1",

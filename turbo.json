@@ -20,6 +20,9 @@
 		"lint": {
 			"outputs": []
 		},
+		"compile": {
+			"outputs": []
+		},
 		"deploy": {
 			"dependsOn": ["build", "test", "lint"],
 			"outputs": []

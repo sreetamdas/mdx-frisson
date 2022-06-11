@@ -22,10 +22,11 @@
 	},
 	"private": true,
 	"scripts": {
+		"dev": "turbo run dev",
 		"build": "turbo run build",
 		"test": "turbo run test",
 		"lint": "turbo run lint",
-		"dev": "turbo run dev"
+		"compile": "turbo run compile"
 	},
 	"devDependencies": {
 		"@types/node": "^17.0.42",
