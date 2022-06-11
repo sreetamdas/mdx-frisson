@@ -30,7 +30,7 @@
 	],
 	"scripts": {
 		"dev": "vite",
-		"build": "rimraf dist && tsc",
+		"build": "rimraf types && tsc",
 		"prepublishOnly": "pnpm run build",
 		"preview": "vite preview",
 		"lint": "eslint src --cache --fix",

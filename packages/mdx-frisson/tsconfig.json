@@ -3,6 +3,7 @@
 		"noEmit": false,
 		"declaration": true,
 		"emitDeclarationOnly": true,
+		"outDir": "types",
 		"declarationDir": "types"
 	},
 	"extends": "../../tsconfig.json",
