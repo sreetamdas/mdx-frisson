@@ -5,17 +5,10 @@ import { visit } from "unist-util-visit";
  * @returns
  */
 export function rehypeSplitMDX() {
-	// console.log("=== ONCE ===");
-
-	return (tree: any, file: any) => {
-		// console.log("=== TWICE ===");
-		// console.log(file);
-
+	return (tree: any, _file: any) => {
 		visit(tree, "element", (node: any) => {
 			if (node.tagName === "hr") {
-				// console.log("hr");
 			}
-			// console.log(node);
 		});
 	};
 }

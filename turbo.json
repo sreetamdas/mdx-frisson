@@ -1,0 +1,31 @@
+{
+	"$schema": "https://turborepo.org/schema.json",
+	"baseBranch": "origin/main",
+	"pipeline": {
+		"dev": {
+			"outputs": []
+		},
+		"mdx-frisson-started#dev": {
+			"dependsOn": ["mdx-frisson#dev"]
+		},
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": ["build/**"]
+		},
+		"test": {
+			"dependsOn": ["build"],
+			"outputs": [],
+			"inputs": ["src/**/*.tsx", "src/**/*.ts", "test/**/*.ts", "test/**/*.tsx"]
+		},
+		"lint": {
+			"outputs": []
+		},
+		"compile": {
+			"outputs": []
+		},
+		"deploy": {
+			"dependsOn": ["build", "test", "lint"],
+			"outputs": []
+		}
+	}
+}

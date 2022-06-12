@@ -1,16 +1,16 @@
-module.exports = {
-	parser: "@typescript-eslint/parser",
-	extends: [
+{
+	"parser": "@typescript-eslint/parser",
+	"extends": [
 		"plugin:@typescript-eslint/recommended",
 		"plugin:react/recommended",
 		"plugin:react-hooks/recommended",
-		"plugin:prettier/recommended",
+		"plugin:prettier/recommended"
 	],
-	parserOptions: {
-		ecmaVersion: 2022,
-		sourceType: "module",
+	"parserOptions": {
+		"ecmaVersion": 2022,
+		"sourceType": "module"
 	},
-	rules: {
+	"rules": {
 		"@typescript-eslint/explicit-function-return-type": "off",
 		"@typescript-eslint/explicit-module-boundary-types": "off",
 		"react/react-in-jsx-scope": "off",
@@ -20,17 +20,17 @@ module.exports = {
 		"prettier/prettier": [
 			"error",
 			{
-				trailingComma: "all",
-				useTabs: true,
-				tabWidth: 2,
-				semi: true,
-				singleQuote: false,
-			},
-		],
+				"trailingComma": "all",
+				"useTabs": true,
+				"tabWidth": 2,
+				"semi": true,
+				"singleQuote": false
+			}
+		]
 	},
-	settings: {
-		react: {
-			version: "detect",
-		},
-	},
-};
+	"settings": {
+		"react": {
+			"version": "detect"
+		}
+	}
+}
