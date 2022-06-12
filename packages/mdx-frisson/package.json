@@ -2,8 +2,11 @@
 	"name": "mdx-frisson",
 	"description": "Beautiful MDX, great DX",
 	"version": "0.1.0",
-	"main": "src/main.ts",
-	"types": "types",
+	"main": "dist/index.js",
+	"types": "dist/index.d.ts",
+	"files": [
+		"dist"
+	],
 	"author": {
 		"name": "Sreetam Das",
 		"url": "https://github.com/sreetamdas"
@@ -30,7 +33,7 @@
 	],
 	"scripts": {
 		"dev": "vite",
-		"build": "rimraf types && tsc",
+		"build": "rimraf dist && tsc",
 		"prepublishOnly": "pnpm run build",
 		"preview": "vite preview",
 		"lint": "eslint src --cache --fix",

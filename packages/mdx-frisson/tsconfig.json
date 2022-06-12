@@ -2,9 +2,8 @@
 	"compilerOptions": {
 		"noEmit": false,
 		"declaration": true,
-		"emitDeclarationOnly": true,
-		"outDir": "types",
-		"declarationDir": "types"
+		"outDir": "dist",
+		"tsBuildInfoFile": "./tsconfig.tsbuildinfo"
 	},
 	"extends": "../../tsconfig.json",
 	"include": ["src"]
