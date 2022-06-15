@@ -2,7 +2,8 @@
 	"extends": [
 		"../../.eslintrc.json",
 		"plugin:react/recommended",
-		"plugin:react-hooks/recommended"
+		"plugin:react-hooks/recommended",
+		"plugin:mdx/recommended"
 	],
 	"parserOptions": {
 		"ecmaVersion": 2022,
@@ -13,6 +14,7 @@
 		"react/prop-types": "off"
 	},
 	"settings": {
+		"mdx/code-blocks": true,
 		"react": {
 			"version": "detect"
 		}
