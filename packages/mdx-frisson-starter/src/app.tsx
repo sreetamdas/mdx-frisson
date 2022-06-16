@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import * as runtime from "react/jsx-runtime";
 import { run } from "@mdx-js/mdx";
 import { bundleMDXDeck } from "mdx-frisson";
@@ -9,7 +8,7 @@ import Deck from "./deck.mdx?raw";
 async function getBundle() {
 	const { default: Content } = await run(
 		await bundleMDXDeck(Deck, {
-			baseUrl: new URL("./content/deck.mdx", import.meta.url).href,
+			baseUrl: new URL("./deck.mdx", import.meta.url).href,
 		}),
 		runtime,
 	);
@@ -17,19 +16,14 @@ async function getBundle() {
 	return Content;
 }
 
+const Content = await getBundle();
+
 export const App = () => {
-	const [component, setComponent] = useState();
-	async function load() {
-		const res = await getBundle();
-
-		setComponent(res);
-	}
-
-	useEffect(() => {
-		load();
-	}, []);
-
-	return <div className="App">{component}</div>;
+	return (
+		<div className="App">
+			<Content />
+		</div>
+	);
 };
 
 export default App;
