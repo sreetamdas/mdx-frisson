@@ -5,11 +5,5 @@ export const Highlight = ({ children }: PropsWithChildren) => {
 };
 
 export const Layout = ({ children }: PropsWithChildren) => {
-	return (
-		<div
-			style={{ border: "2px solid #5b34da", margin: "10px", padding: "0 15px" }}
-		>
-			{children}
-		</div>
-	);
+	return <div style={{ margin: "0px", padding: "15px" }}>{children}</div>;
 };
