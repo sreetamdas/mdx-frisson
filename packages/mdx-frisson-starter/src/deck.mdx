@@ -1,6 +1,9 @@
-{/* Relative imports */}
+{/* You can add relative imports here, */}
+{/* or add them when rendering the file as: */}
+{/* const Content = await compile(...).default */}
+{/* Content({components}) */}
 
-import { Layout, Highlight } from "./components/index";
+import { Highlight } from "./components/shared";
 
 # Hello World!
 
@@ -17,8 +20,12 @@ import { Layout, Highlight } from "./components/index";
 - First item
 - Second item
 
-<Highlight>It&apos;s all purple!</Highlight>
-
 <hr></hr>
 
+<Highlight>It&apos;s all purple!</Highlight>
+
+<Highlight>
+
 ## Fourth page
+
+</Highlight>
