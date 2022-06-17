@@ -6,11 +6,6 @@ const StyledSlide = styled.div<StyledSlideProps>`
 	height: 100vh;
 	margin: 0;
 
-	h1 {
-		font-size: 10rem;
-		letter-spacing: -5px;
-	}
-
 	${({ $active }) =>
 		$active
 			? css`
