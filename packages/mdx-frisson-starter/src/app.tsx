@@ -1,6 +1,6 @@
 import * as runtime from "react/jsx-runtime";
 import { bundleMDXDeck } from "mdx-frisson";
-import { Layout, Title } from "./components/shared";
+import { Layout, Title, Highlight } from "./components/shared";
 import { Deck } from "./components/Deck";
 
 // ?raw to import as string
@@ -20,7 +20,7 @@ const Content = await getBundle();
 export const App = () => {
 	return (
 		<div className="app">
-			<Deck>{Content({ components: { Layout, Title } })}</Deck>
+			<Deck>{Content({ components: { Layout, Title, Highlight } })}</Deck>
 		</div>
 	);
 };
