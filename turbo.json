@@ -5,6 +5,9 @@
 		"dev": {
 			"outputs": []
 		},
+		"mdx-frisson#dev": {
+			"outputs": ["dist/**"]
+		},
 		"build": {
 			"dependsOn": ["^build"],
 			"outputs": ["build/**"]
