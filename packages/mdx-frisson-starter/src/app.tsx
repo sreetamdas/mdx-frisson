@@ -12,7 +12,6 @@ async function getBundle() {
 		baseUrl: new URL("./deck.mdx", import.meta.url).href,
 		...runtime,
 	});
-
 	return Content;
 }
 const Content = await getBundle();
