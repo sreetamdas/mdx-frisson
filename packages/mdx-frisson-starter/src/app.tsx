@@ -15,7 +15,6 @@ async function getBundle() {
 
 	return Content;
 }
-
 const Content = await getBundle();
 
 export const App = () => {

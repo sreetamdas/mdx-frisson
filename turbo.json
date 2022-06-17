@@ -5,9 +5,6 @@
 		"dev": {
 			"outputs": []
 		},
-		"mdx-frisson-started#dev": {
-			"dependsOn": ["mdx-frisson#dev"]
-		},
 		"build": {
 			"dependsOn": ["^build"],
 			"outputs": ["build/**"]
