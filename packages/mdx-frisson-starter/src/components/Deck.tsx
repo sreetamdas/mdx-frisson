@@ -20,14 +20,12 @@ export const Deck = ({
 
 	const [activeSlideIndex, setActiveSlideIndex] = useState(indexFromURL - 1);
 
-	const handleNavigation = useCallback((event: KeyboardEvent) => {
-		const { key } = event;
-		if (key === "ArrowLeft") {
-			setActiveSlideIndex((index) => index - 1);
-		} else if (key === "ArrowRight") {
-			setActiveSlideIndex((index) => index + 1);
-		}
-	}, []);
+	const handleNavigation = useCallback(
+		(event: KeyboardEvent) => {
+			setActiveSlideIndex(getSlide(event, activeSlideIndex, allSlides.length));
+		},
+		[activeSlideIndex, allSlides.length],
+	);
 
 	useEffect(() => {
 		if (window) {
@@ -51,5 +49,29 @@ export const Deck = ({
 		</StyledDeck>
 	);
 };
+
+/**
+ * Get index for next slide
+ * @param event
+ * @param currentIndex
+ * @param totalSlidesCount
+ * @returns index for next slide
+ */
+function getSlide(
+	event: KeyboardEvent,
+	currentIndex: number,
+	totalSlidesCount: number,
+) {
+	const { key } = event;
+	let slideIndex = currentIndex;
+
+	if (key === "ArrowLeft") {
+		slideIndex = Math.max(currentIndex - 1, 0);
+	} else if (key === "ArrowRight") {
+		slideIndex = Math.min(currentIndex + 1, totalSlidesCount - 1);
+	}
+
+	return slideIndex;
+}
 
 export const StyledDeck = styled.main``;
