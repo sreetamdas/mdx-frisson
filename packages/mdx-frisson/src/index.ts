@@ -1,15 +1,16 @@
-import { CompileOptions as MDXCompileOptions, compile } from "@mdx-js/mdx";
-import { VFile } from "vfile";
+import { EvaluateOptions, evaluate } from "@mdx-js/mdx";
+import type { ExportMap } from "@mdx-js/mdx/lib/evaluate";
+
 import { rehypeSplitMDX } from "./plugin";
 
-export type CompileOptions = MDXCompileOptions & Required<{ baseUrl: string }>;
+export type BundleMDXOptions = EvaluateOptions;
 export async function bundleMDXDeck(
 	rawInput: string,
-	options: CompileOptions,
-): Promise<VFile> {
-	const result = await compile(rawInput, {
-		outputFormat: "function-body",
+	options: BundleMDXOptions,
+): Promise<ExportMap> {
+	const result = await evaluate(rawInput, {
 		useDynamicImport: true,
+		development: process.env.NODE_ENV === "development",
 		rehypePlugins: [rehypeSplitMDX],
 		...options,
 	});

@@ -28,3 +28,4 @@ types
 # Caches
 .eslintcache
 tsconfig.tsbuildinfo
+.vercel

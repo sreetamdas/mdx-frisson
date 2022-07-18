@@ -5,12 +5,12 @@
 		"dev": {
 			"outputs": []
 		},
-		"mdx-frisson-started#dev": {
-			"dependsOn": ["mdx-frisson#dev"]
+		"mdx-frisson#dev": {
+			"outputs": ["dist/**"]
 		},
 		"build": {
 			"dependsOn": ["^build"],
-			"outputs": ["build/**"]
+			"outputs": ["dist/**"]
 		},
 		"test": {
 			"dependsOn": ["build"],

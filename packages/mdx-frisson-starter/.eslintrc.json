@@ -13,6 +13,7 @@
 		"react/react-in-jsx-scope": "off",
 		"react/prop-types": "off"
 	},
+	"ignorePatterns": ["*.mdx"],
 	"settings": {
 		"mdx/code-blocks": true,
 		"react": {

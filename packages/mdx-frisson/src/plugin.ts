@@ -1,7 +1,5 @@
 import { visit } from "unist-util-visit";
 import type { Parent, Node } from "unist-util-visit";
-// import type { Data } from ;
-
 import findAllBetween from "unist-util-find-all-between";
 import { findAllBefore } from "unist-util-find-all-before";
 import { findAllAfter } from "unist-util-find-all-after";

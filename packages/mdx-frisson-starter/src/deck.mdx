@@ -1,24 +1,33 @@
-{/* Relative imports */}
+{/* You can add relative imports here, */}
+{/* or add them when rendering the file as: */}
+{/* const Content = await compile(...).default */}
+{/* Content({components}) */}
 
-import { Layout, Highlight } from "./components/index";
-
-# Hello World!
-
----
-
-## Second page
-
-### Sub-section
+<Title>Hello World!</Title>
 
 ---
 
-## Third page
+# Title
+
+## Subheading
+
+### Sub-section heading
+
+Normal text
+
+---
+
+## Third page's heading
 
 - First item
 - Second item
 
-<Highlight>It&apos;s all purple!</Highlight>
-
 <hr></hr>
 
-## Fourth page
+<Highlight>It&apos;s all purple! A React component!</Highlight>
+
+<Highlight>
+
+## Markdown inside JSX
+
+</Highlight>
