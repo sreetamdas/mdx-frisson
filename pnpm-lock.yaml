@@ -6,9 +6,7 @@ importers:
     specifiers:
       '@types/eslint': ^8.4.5
       '@types/eslint-plugin-prettier': ^3.1.0
-      '@types/node': ^18.6.3
       '@types/prettier': ^2.6.4
-      '@types/rimraf': ^3.0.2
       '@typescript-eslint/eslint-plugin': ^5.32.0
       '@typescript-eslint/parser': ^5.32.0
       eslint: ^8.21.0
@@ -16,16 +14,13 @@ importers:
       eslint-plugin-import: ^2.26.0
       eslint-plugin-prettier: ^4.2.1
       prettier: ^2.7.1
-      rimraf: ^3.0.2
       turbo: ^1.4.2
       typescript: ^4.7.4
       vite: ^3.0.4
     devDependencies:
       '@types/eslint': 8.4.5
       '@types/eslint-plugin-prettier': 3.1.0
-      '@types/node': 18.6.3
       '@types/prettier': 2.6.4
-      '@types/rimraf': 3.0.2
       '@typescript-eslint/eslint-plugin': 5.32.0_iosr3hrei2tubxveewluhu5lhy
       '@typescript-eslint/parser': 5.32.0_qugx7qdu5zevzvxaiqyxfiwquq
       eslint: 8.21.0
@@ -33,7 +28,6 @@ importers:
       eslint-plugin-import: 2.26.0_wuikv5nqgdfyng42xxm7lklfmi
       eslint-plugin-prettier: 4.2.1_h62lvancfh4b7r6zn2dgodrh5e
       prettier: 2.7.1
-      rimraf: 3.0.2
       turbo: 1.4.2
       typescript: 4.7.4
       vite: 3.0.4
@@ -41,7 +35,6 @@ importers:
   packages/mdx-frisson:
     specifiers:
       '@mdx-js/mdx': ^2.1.2
-      '@types/node': ^18.6.3
       tsup: ^6.2.1
       turbo: ^1.4.2
       typescript: ^4.7.4
@@ -60,7 +53,6 @@ importers:
       unist-util-visit: 4.1.0
       vfile: 5.3.4
     devDependencies:
-      '@types/node': 18.6.3
       tsup: 6.2.1_typescript@4.7.4
       turbo: 1.4.2
       typescript: 4.7.4
@@ -71,7 +63,6 @@ importers:
       '@types/eslint': ^8.4.5
       '@types/eslint-plugin-prettier': ^3.1.0
       '@types/mdx': ^2.0.2
-      '@types/node': ^18.6.3
       '@types/prettier': ^2.6.4
       '@types/react': ^18.0.15
       '@types/react-dom': ^18.0.6
@@ -96,7 +87,6 @@ importers:
       vite: ^3.0.4
     dependencies:
       '@mdx-js/rollup': 2.1.2
-      '@types/node': 18.6.3
       mdx-frisson: link:../mdx-frisson
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
@@ -745,13 +735,6 @@ packages:
     resolution: {integrity: sha512-WulqXMDUTYAXCjZnk6JtIHPigp55cVtDgDrO2gHRwhyJto21+1zbVCtOYB2L1F9w4qCQ0rOGWBnBe0FNTiEJIQ==}
     dev: true
 
-  /@types/glob/7.2.0:
-    resolution: {integrity: sha512-ZUxbzKl0IfJILTS6t7ip5fQQM/J3TJYubDm3nMbgubNNYS62eXeUpoLUC8/7fJNiFYHTrGPQn7hspDUzIHX3UA==}
-    dependencies:
-      '@types/minimatch': 3.0.5
-      '@types/node': 18.6.3
-    dev: true
-
   /@types/hast/2.3.4:
     resolution: {integrity: sha512-wLEm0QvaoawEDoTRwzTXp4b4jpwiJDvR5KMnFnVodm3scufTlBOWRD6N1OBf9TZMhjlNsSfcO5V+7AF4+Vy+9g==}
     dependencies:
@@ -784,15 +767,8 @@ packages:
   /@types/mdx/2.0.2:
     resolution: {integrity: sha512-mJGfgj4aWpiKb8C0nnJJchs1sHBHn0HugkVfqqyQi7Wn6mBRksLeQsPOFvih/Pu8L1vlDzfe/LidhVHBeUk3aQ==}
 
-  /@types/minimatch/3.0.5:
-    resolution: {integrity: sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ==}
-    dev: true
-
   /@types/ms/0.7.31:
     resolution: {integrity: sha512-iiUgKzV9AuaEkZqkOLDIvlQiL6ltuZd9tGcW3gwpnX8JbuiuhFlEGmmFXEXkN50Cvq7Os88IY2v0dkDqXYWVgA==}
-
-  /@types/node/18.6.3:
-    resolution: {integrity: sha512-6qKpDtoaYLM+5+AFChLhHermMQxc3TOEFIDzrZLPRGHPrLEwqFkkT5Kx3ju05g6X7uDPazz3jHbKPX0KzCjntg==}
 
   /@types/parse-json/4.0.0:
     resolution: {integrity: sha512-//oorEZjL6sbPcKUaCdIGlIUeH26mgzimjBB77G6XRgnDl/L5wOnpyBGRe/Mmf5CVW3PwEBE1NjiMZ/ssFh4wA==}
@@ -824,13 +800,6 @@ packages:
       '@types/prop-types': 15.7.5
       '@types/scheduler': 0.16.2
       csstype: 3.1.0
-    dev: true
-
-  /@types/rimraf/3.0.2:
-    resolution: {integrity: sha512-F3OznnSLAUxFrCEu/L5PY8+ny8DtcFRjx7fZZ9bycvXRi3KPTRS9HOitGZwvPg0juRhXFWIeKX58cnX5YqLohQ==}
-    dependencies:
-      '@types/glob': 7.2.0
-      '@types/node': 18.6.3
     dev: true
 
   /@types/scheduler/0.16.2:
