@@ -17,7 +17,7 @@ function getWrappedPage(children: Node[]) {
  * Splits nodes upon encountering `---`
  * @returns
  */
-export function rehypeSplitMDX() {
+export function rehypeBreakSplit() {
 	return (tree: Parent) => {
 		const pageBreakIndices: number[] = [];
 

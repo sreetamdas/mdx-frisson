@@ -1,7 +1,9 @@
 import { EvaluateOptions, evaluate } from "@mdx-js/mdx";
 import type { ExportMap } from "@mdx-js/mdx/lib/evaluate";
 
-import { rehypeSplitMDX } from "./plugin";
+import { rehypeBreakSplit } from "./plugin";
+
+export { rehypeBreakSplit };
 
 export type BundleMDXOptions = EvaluateOptions;
 export async function bundleMDXDeck(
@@ -11,7 +13,7 @@ export async function bundleMDXDeck(
 	const result = await evaluate(rawInput, {
 		useDynamicImport: true,
 		development: process.env.NODE_ENV === "development",
-		rehypePlugins: [rehypeSplitMDX],
+		rehypePlugins: [rehypeBreakSplit],
 		...options,
 	});
 

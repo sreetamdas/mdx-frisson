@@ -1,5 +1,7 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import mdx from "@mdx-js/rollup";
+import { rehypeBreakSplit } from "mdx-frisson";
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,5 +11,10 @@ export default defineConfig({
 	build: {
 		target: "esnext",
 	},
-	plugins: [react()],
+	plugins: [
+		react(),
+		mdx({
+			rehypePlugins: [rehypeBreakSplit],
+		}),
+	],
 });
