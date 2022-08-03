@@ -1,0 +1,52 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    if: github.repository == 'sreetamdas/mdx-frisson'
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 7.8.0
+
+      - name: Setup Node.js 16.13.0
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.13.0
+          cache: "pnpm"
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Creating .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: pnpm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      # - name: Send a Slack notification if a publish happens
+      #   if: steps.changesets.outputs.published == 'true'
+      #   # You can do something when a publish happens.
+      #   run: my-slack-bot send-notification --message "A new version of ${GITHUB_REPOSITORY} was published!"
