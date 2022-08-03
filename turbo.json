@@ -3,7 +3,7 @@
 	"baseBranch": "origin/main",
 	"pipeline": {
 		"dev": {
-			"outputs": []
+			"cache": false
 		},
 		"mdx-frisson#dev": {
 			"outputs": ["dist/**"]
