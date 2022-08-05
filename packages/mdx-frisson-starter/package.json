@@ -40,7 +40,7 @@
 	},
 	"dependencies": {
 		"@mdx-js/rollup": "^2.1.2",
-		"mdx-frisson": "workspace:latest",
+		"mdx-frisson": "workspace:*",
 		"react": "^18.0.0",
 		"react-dom": "^18.0.0",
 		"react-is": "^18.2.0",

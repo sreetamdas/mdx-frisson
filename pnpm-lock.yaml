@@ -81,7 +81,7 @@ importers:
       eslint-plugin-prettier: ^4.2.1
       eslint-plugin-react: ^7.30.1
       eslint-plugin-react-hooks: ^4.5.0
-      mdx-frisson: workspace:latest
+      mdx-frisson: workspace:*
       prettier: ^2.7.1
       react: ^18.0.0
       react-dom: ^18.0.0
