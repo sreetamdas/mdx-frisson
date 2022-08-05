@@ -30,11 +30,13 @@
 	],
 	"scripts": {
 		"dev": "vite",
-		"build": "tsc && vite build",
-		"preview": "vite preview",
 		"lint": "eslint src --cache --fix",
 		"lint:check": "eslint src --cache",
-		"compile": "tsc --watch"
+		"compile": "tsc --watch",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"release": "pnpm publish",
+		"release:dry-run": "pnpm publish --dry-run"
 	},
 	"dependencies": {
 		"@mdx-js/rollup": "^2.1.2",

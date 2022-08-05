@@ -34,11 +34,13 @@
 	],
 	"scripts": {
 		"dev": "tsup --watch",
-		"build": "rimraf ./dist && tsup",
-		"prepublishOnly": "pnpm run build",
 		"lint": "eslint src --cache --fix",
 		"lint:check": "eslint src --cache",
-		"compile": "tsc --watch"
+		"compile": "tsc --watch",
+		"build": "rimraf ./dist && tsup",
+		"prepublishOnly": "pnpm run build",
+		"release": "pnpm publish",
+		"release:dry-run": "pnpm publish --dry-run"
 	},
 	"devDependencies": {
 		"tsup": "^6.2.1",
