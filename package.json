@@ -27,7 +27,7 @@
 		"test": "turbo run test",
 		"lint": "turbo run lint",
 		"compile": "turbo run compile",
-		"release": "turbo run release"
+		"release": "turbo run build"
 	},
 	"devDependencies": {
 		"@changesets/cli": "^2.24.1",
