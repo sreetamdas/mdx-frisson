@@ -34,7 +34,7 @@
 	],
 	"scripts": {
 		"dev": "tsup --watch",
-		"build": "tsup",
+		"build": "rimraf ./dist && tsup",
 		"prepublishOnly": "pnpm run build",
 		"lint": "eslint src --cache --fix",
 		"lint:check": "eslint src --cache",
