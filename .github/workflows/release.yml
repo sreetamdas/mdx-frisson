@@ -1,0 +1,72 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
+
+jobs:
+  release:
+    # Prevent action from running on forks
+    if: github.repository == 'sreetamdas/mdx-frisson'
+    name: Release
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [16.13.0]
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      # pnpm
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.2.2
+        id: pnpm-install
+        with:
+          version: 7.8.0
+          run_install: false
+      - name: Get pnpm store directory
+        id: pnpm-cache
+        run: |
+          echo "::set-output name=pnpm_cache_dir::$(pnpm store path)"
+      - name: Setup pnpm cache
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.pnpm-cache.outputs.pnpm_cache_dir }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: Install Dependencies
+        # No need for --frozen-lockfile since env.CI is true
+        # https://pnpm.io/cli/install#--frozen-lockfile
+        run: pnpm install
+
+      - name: Creating .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          # This expects you to have a script called release which does a build for your packages and calls changeset publish
+          publish: pnpm run release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
