@@ -1,3 +1,4 @@
+import { useLocation } from "wouter";
 import {
 	Children,
 	PropsWithChildren,
@@ -15,16 +16,21 @@ export const Deck = ({
 	},
 }: Props) => {
 	const allSlides = Children.toArray(children);
-	const currentLocation = window.location.pathname;
-	const indexFromURL = ~~(/^\/(\d{1,})/g.exec(currentLocation)?.[1] ?? "1");
 
-	const [activeSlideIndex, setActiveSlideIndex] = useState(indexFromURL - 1);
+	const [activeSlide, setActiveSlide] = useState(parseURL());
+	const [_asd, setLocation] = useLocation();
 
 	const handleNavigation = useCallback(
 		(event: KeyboardEvent) => {
-			setActiveSlideIndex(getSlide(event, activeSlideIndex, allSlides.length));
+			const slideIndex = getSlideIndex(event, activeSlide, allSlides.length);
+
+			if (slideIndex !== activeSlide) {
+				setActiveSlide(slideIndex);
+				setLocation(`/${slideIndex}`);
+			}
 		},
-		[activeSlideIndex, allSlides.length],
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+		[activeSlide, allSlides.length],
 	);
 
 	useEffect(() => {
@@ -41,7 +47,7 @@ export const Deck = ({
 				<Slide
 					key={index}
 					id={`slide-${index}`}
-					isActive={index === activeSlideIndex}
+					isActive={index === activeSlide}
 				>
 					{slide}
 				</Slide>
@@ -57,21 +63,28 @@ export const Deck = ({
  * @param totalSlidesCount
  * @returns index for next slide
  */
-function getSlide(
+function getSlideIndex(
 	event: KeyboardEvent,
 	currentIndex: number,
 	totalSlidesCount: number,
 ) {
 	const { key } = event;
-	let slideIndex = currentIndex;
 
-	if (key === "ArrowLeft") {
-		slideIndex = Math.max(currentIndex - 1, 0);
-	} else if (key === "ArrowRight") {
-		slideIndex = Math.min(currentIndex + 1, totalSlidesCount - 1);
+	switch (key) {
+		case "ArrowLeft":
+			return Math.max(currentIndex - 1, 0);
+
+		case "ArrowRight":
+			return Math.min(currentIndex + 1, totalSlidesCount - 1);
+
+		default:
+			return currentIndex;
 	}
-
-	return slideIndex;
 }
 
 export const StyledDeck = styled.main``;
+
+function parseURL() {
+	const currentLocation = window.location.pathname;
+	return ~~(/^\/(\d{1,})/gi.exec(currentLocation)?.[1] ?? "0");
+}
