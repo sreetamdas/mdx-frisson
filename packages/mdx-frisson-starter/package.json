@@ -33,7 +33,7 @@
 		"lint": "eslint src --cache --fix",
 		"lint:check": "eslint src --cache",
 		"compile": "tsc --watch",
-		"build": "tsc && vite build",
+		"build": "vite build",
 		"preview": "vite preview",
 		"release": "pnpm publish",
 		"release:dry-run": "pnpm publish --dry-run"
