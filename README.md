@@ -15,9 +15,9 @@ MDX Deck so good you get _the chills_. 😮‍💨
 
 ## Usage
 
-mdx-frisson **is under active development**, so there is additional setup needed to use it.
+mdx-frisson **is under active development**, so there is additional setup needed to use it. Please check back later! 🙏
 
-### Inspiration
+## Inspiration // prior art
 
 - [MDX Deck](https://github.com/jxnblk/mdx-deck)
 - [Code Surfer](https://github.com/pomber/code-surfer)

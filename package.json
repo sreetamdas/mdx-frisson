@@ -30,20 +30,20 @@
 		"release": "changeset publish"
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.25.0",
-		"@types/eslint": "^8.4.7",
+		"@changesets/cli": "^2.25.2",
+		"@types/eslint": "^8.4.10",
 		"@types/eslint-plugin-prettier": "^3.1.0",
 		"@types/prettier": "^2.7.1",
-		"@typescript-eslint/eslint-plugin": "^5.40.1",
-		"@typescript-eslint/parser": "^5.40.1",
-		"eslint": "^8.26.0",
+		"@typescript-eslint/eslint-plugin": "^5.43.0",
+		"@typescript-eslint/parser": "^5.43.0",
+		"eslint": "^8.27.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-import": "^2.26.0",
 		"eslint-plugin-prettier": "^4.2.1",
 		"prettier": "^2.7.1",
 		"rimraf": "^3.0.2",
-		"turbo": "^1.6.1",
-		"typescript": "^4.8.4",
-		"vite": "^3.1.8"
+		"turbo": "^1.6.3",
+		"typescript": "^4.9.3",
+		"vite": "^3.2.4"
 	}
 }
