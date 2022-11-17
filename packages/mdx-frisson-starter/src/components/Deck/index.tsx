@@ -7,7 +7,7 @@ import {
 	useState,
 } from "react";
 import styled from "styled-components";
-import { Slide } from "./Slide";
+import { Slide } from "../Slide";
 
 type Props = { children: { props: PropsWithChildren } };
 export const Deck = ({
@@ -18,7 +18,7 @@ export const Deck = ({
 	const allSlides = Children.toArray(children);
 
 	const [activeSlide, setActiveSlide] = useState(parseURL());
-	const [_asd, setLocation] = useLocation();
+	const [_, setLocation] = useLocation();
 
 	const handleNavigation = useCallback(
 		(event: KeyboardEvent) => {
