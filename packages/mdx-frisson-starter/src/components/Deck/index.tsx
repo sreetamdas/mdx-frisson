@@ -6,8 +6,9 @@ import {
 	useEffect,
 	useState,
 } from "react";
-import styled from "styled-components";
+
 import { Slide } from "../Slide";
+import { StyledDeck } from "./styled";
 
 type Props = { children: { props: PropsWithChildren } };
 export const Deck = ({
@@ -81,8 +82,6 @@ function getSlideIndex(
 			return currentIndex;
 	}
 }
-
-export const StyledDeck = styled.main``;
 
 function parseURL() {
 	const currentLocation = window.location.pathname;

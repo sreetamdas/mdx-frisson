@@ -3,7 +3,7 @@ import styled, { css } from "styled-components";
 
 type StyledSlideProps = { $active: boolean };
 const StyledSlide = styled.div<StyledSlideProps>`
-	height: 100vh;
+	height: 100%;
 	margin: 0;
 
 	${({ $active }) =>

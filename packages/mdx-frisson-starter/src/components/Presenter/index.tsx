@@ -5,20 +5,21 @@
  * - Speaker notes
  */
 
-// import { Deck } from "@/components/Deck";
-// import { Deck } from "@/components/Deck";
-// import { Deck } from "../Deck";
-// import { Deck } from "src/components/Deck";
-// import { Deck } from ";
+import { MDXContent } from "mdx/types";
 import { Deck } from "../Deck";
-import { PresenterWrapper } from "./styled";
+import {
+	PresenterWrapper,
+	SpeakerNotesWrapper,
+	MetadataWrapper,
+} from "./styled";
 
-export const PresenterMode = ({ slides }) => {
-	console.log({ slides });
-
+type Props = { slides: ReturnType<MDXContent> };
+export const PresenterMode = ({ slides }: Props) => {
 	return (
 		<PresenterWrapper>
 			<Deck>{slides}</Deck>
+			<SpeakerNotesWrapper></SpeakerNotesWrapper>
+			<MetadataWrapper></MetadataWrapper>
 		</PresenterWrapper>
 	);
 };
