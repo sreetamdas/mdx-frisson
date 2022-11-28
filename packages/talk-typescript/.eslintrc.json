@@ -1,0 +1,23 @@
+{
+	"extends": [
+		"../../.eslintrc.json",
+		"plugin:react/recommended",
+		"plugin:react-hooks/recommended",
+		"plugin:mdx/recommended"
+	],
+	"parserOptions": {
+		"ecmaVersion": 2022,
+		"sourceType": "module"
+	},
+	"rules": {
+		"react/react-in-jsx-scope": "off",
+		"react/prop-types": "off"
+	},
+	"ignorePatterns": ["*.mdx"],
+	"settings": {
+		"mdx/code-blocks": true,
+		"react": {
+			"version": "detect"
+		}
+	}
+}
