@@ -5,6 +5,8 @@ export const PresenterWrapper = styled(Main)`
 	display: grid;
 	grid-template-columns: 1fr minmax(200px, 30vw);
 	grid-template-rows: 1fr minmax(50px, 10vh);
+
+	border: 5px solid red;
 `;
 
 export const SpeakerNotesWrapper = styled.section``;

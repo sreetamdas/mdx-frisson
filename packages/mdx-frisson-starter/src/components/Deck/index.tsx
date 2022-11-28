@@ -10,12 +10,16 @@ import {
 import { Slide } from "../Slide";
 import { StyledDeck } from "./styled";
 
-type Props = { children: { props: PropsWithChildren } };
+export type DeckProps = {
+	prefix?: string;
+	children: { props: PropsWithChildren };
+};
 export const Deck = ({
+	prefix = "",
 	children: {
 		props: { children },
 	},
-}: Props) => {
+}: DeckProps) => {
 	const allSlides = Children.toArray(children);
 
 	const [activeSlide, setActiveSlide] = useState(parseURL());
@@ -27,7 +31,7 @@ export const Deck = ({
 
 			if (slideIndex !== activeSlide) {
 				setActiveSlide(slideIndex);
-				setLocation(`/${slideIndex}`);
+				setLocation(`/${prefix}${slideIndex}`);
 			}
 		},
 		// eslint-disable-next-line react-hooks/exhaustive-deps

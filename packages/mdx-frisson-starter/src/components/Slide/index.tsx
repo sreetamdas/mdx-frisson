@@ -6,6 +6,8 @@ const StyledSlide = styled.div<StyledSlideProps>`
 	height: 100%;
 	margin: 0;
 
+	border: 5px solid orange;
+
 	${({ $active }) =>
 		$active
 			? css`
@@ -22,6 +24,7 @@ export type SlideProps = PropsWithChildren<{
 	id?: string;
 	isActive: boolean;
 }>;
+
 export const Slide = ({ isActive, children, ...props }: SlideProps) => {
 	return (
 		<StyledSlide $active={isActive} {...props}>
