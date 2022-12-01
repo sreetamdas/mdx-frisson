@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react";
 import mdx from "@mdx-js/rollup";
 import { rehypeBreakSplit } from "mdx-frisson";
 
-// https://vitejs.dev/config/
+/** @type {import('vite').UserConfig} */
 export default defineConfig({
 	optimizeDeps: {
 		include: ["react/jsx-runtime"],

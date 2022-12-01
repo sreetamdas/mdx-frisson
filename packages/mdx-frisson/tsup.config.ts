@@ -1,6 +1,6 @@
 import { defineConfig } from "tsup";
 
-// https://vitejs.dev/config/
+/** @type {import('tsup').UserConfig} */
 export default defineConfig({
 	entry: ["src/index.ts"],
 	format: ["esm"],

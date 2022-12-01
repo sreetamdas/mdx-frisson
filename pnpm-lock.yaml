@@ -39,6 +39,8 @@ importers:
   packages/mdx-frisson:
     specifiers:
       '@mdx-js/mdx': ^2.1.5
+      '@sreetamdas/karma': ^3.0.0
+      shiki: ^0.11.1
       tsup: ^6.5.0
       turbo: ^1.6.3
       typescript: ^4.9.3
@@ -48,8 +50,11 @@ importers:
       unist-util-find-all-between: ^2.1.0
       unist-util-visit: ^4.1.1
       vfile: ^5.3.6
+      vscode-textmate: ^7.0.4
     dependencies:
       '@mdx-js/mdx': 2.1.5
+      '@sreetamdas/karma': 3.0.0
+      shiki: 0.11.1
       unist-builder: 3.0.0
       unist-util-find-all-after: 4.0.0
       unist-util-find-all-before: 4.0.0
@@ -60,6 +65,7 @@ importers:
       tsup: 6.5.0_typescript@4.9.3
       turbo: 1.6.3
       typescript: 4.9.3
+      vscode-textmate: 7.0.4
 
   packages/mdx-frisson-starter:
     specifiers:
@@ -123,6 +129,7 @@ importers:
   packages/talk-typescript:
     specifiers:
       '@mdx-js/rollup': ^2.1.5
+      '@sreetamdas/karma': ^3.0.0
       '@types/eslint': ^8.4.10
       '@types/eslint-plugin-prettier': ^3.1.0
       '@types/mdx': ^2.0.3
@@ -145,17 +152,25 @@ importers:
       react: ^18.0.0
       react-dom: ^18.0.0
       react-is: ^18.2.0
+      rehype-pretty-code: ^0.5.1
+      shiki: ^0.11.1
       styled-components: ^5.3.6
       typescript: ^4.9.3
+      unist-util-visit: ^4.1.1
       vite: ^3.2.4
+      vscode-textmate: ^7.0.4
       wouter: 2.9.0
     dependencies:
       '@mdx-js/rollup': 2.1.5
+      '@sreetamdas/karma': 3.0.0
       mdx-frisson: link:../mdx-frisson
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-is: 18.2.0
+      rehype-pretty-code: 0.5.1_shiki@0.11.1
+      shiki: 0.11.1
       styled-components: 5.3.6_7i5myeigehqah43i5u7wbekgba
+      unist-util-visit: 4.1.1
       wouter: 2.9.0_react@18.2.0
     devDependencies:
       '@types/eslint': 8.4.10
@@ -178,6 +193,7 @@ importers:
       prettier: 2.8.0
       typescript: 4.9.3
       vite: 3.2.4
+      vscode-textmate: 7.0.4
 
 packages:
 
@@ -922,6 +938,11 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.1
+    dev: false
+
+  /@sreetamdas/karma/3.0.0:
+    resolution: {integrity: sha512-3Muqbr45wjOhhZs5CdEbAxCCBFqdOvH9458Aqma1D+vlleNicU+qeWj1dX7a7sPlR/LviQdPmQtd5P0S7e4lUQ==}
+    engines: {vscode: ^1.41.0}
     dev: false
 
   /@types/acorn/4.0.6:
@@ -3388,6 +3409,10 @@ packages:
     hasBin: true
     dev: true
 
+  /jsonc-parser/3.2.0:
+    resolution: {integrity: sha512-gfFQZrcTc8CnKXp6Y4/CBT3fTc0OVuDofpre4aEeEpSBPV5X5v4+Vmx+8snU7RLPrNHPKSgLxGo9YuQzz20o+w==}
+    dev: false
+
   /jsonfile/4.0.0:
     resolution: {integrity: sha512-m6F1R3z8jjlf2imQHS2Qez5sjKWQzbuuhuJ/FKYFRZvPE3PuHcSMVZzfsLhGVOkfd20obL5SWEBew5ShlquNxg==}
     optionalDependencies:
@@ -4259,6 +4284,10 @@ packages:
       lines-and-columns: 1.2.4
     dev: true
 
+  /parse-numeric-range/1.3.0:
+    resolution: {integrity: sha512-twN+njEipszzlMJd4ONUYgSfZPDxgHhT9Ahed5uTigpQn90FggW4SA/AIPq/6a149fTbE9qBEcSwE3FAEp6wQQ==}
+    dev: false
+
   /path-exists/3.0.0:
     resolution: {integrity: sha512-bpC7GYwiDYQ4wYLe+FA8lhRjhQCMcQGuSgGGqDkg/QerRWw9CmGRT0iSOVRSZJ29NMLZgIzqaljJ63oaL4NIJQ==}
     engines: {node: '>=4'}
@@ -4498,6 +4527,16 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /rehype-pretty-code/0.5.1_shiki@0.11.1:
+    resolution: {integrity: sha512-v8kVq8eMAm0L1O7H2MH/79CO02tBVE60Bv6pPXiYsSE7YRn8o04sEG7nPj3Xg8pHYRGQsiczX3Pb63JuJtVKDg==}
+    engines: {node: ^12.16.0 || >=13.2.0}
+    peerDependencies:
+      shiki: '*'
+    dependencies:
+      parse-numeric-range: 1.3.0
+      shiki: 0.11.1
+    dev: false
+
   /remark-mdx/2.1.3:
     resolution: {integrity: sha512-3SmtXOy9+jIaVctL8Cs3VAQInjRLGOwNXfrBB9KCT+EpJpKD3PQiy0x8hUNGyjQmdyOs40BqgPU7kYtH9uoR6w==}
     dependencies:
@@ -4695,6 +4734,14 @@ packages:
     resolution: {integrity: sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==}
     engines: {node: '>=8'}
     dev: true
+
+  /shiki/0.11.1:
+    resolution: {integrity: sha512-EugY9VASFuDqOexOgXR18ZV+TbFrQHeCpEYaXamO+SZlsnT/2LxuLBX25GGtIrwaEVFXUAbUQ601SWE2rMwWHA==}
+    dependencies:
+      jsonc-parser: 3.2.0
+      vscode-oniguruma: 1.7.0
+      vscode-textmate: 6.0.0
+    dev: false
 
   /side-channel/1.0.4:
     resolution: {integrity: sha512-q5XPytqFEIKHkGdiMIrY10mvLRvnQh42/+GoBlFW3b2LXLE2xxJpZFdm94we0BaoV3RwJyGqg5wS7epxTv0Zvw==}
@@ -5406,6 +5453,18 @@ packages:
       rollup: 2.79.1
     optionalDependencies:
       fsevents: 2.3.2
+    dev: true
+
+  /vscode-oniguruma/1.7.0:
+    resolution: {integrity: sha512-L9WMGRfrjOhgHSdOYgCt/yRMsXzLDJSL7BPrOZt73gU0iWO4mpqzqQzOz5srxqTvMBaR0XZTSrVWo4j55Rc6cA==}
+    dev: false
+
+  /vscode-textmate/6.0.0:
+    resolution: {integrity: sha512-gu73tuZfJgu+mvCSy4UZwd2JXykjK9zAZsfmDeut5dx/1a7FeTk0XwJsSuqQn+cuMCGVbIBfl+s53X4T19DnzQ==}
+    dev: false
+
+  /vscode-textmate/7.0.4:
+    resolution: {integrity: sha512-9hJp0xL7HW1Q5OgGe03NACo7yiCTMEk3WU/rtKXUbncLtdg6rVVNJnHwD88UhbIYU2KoxY0Dih0x+kIsmUKn2A==}
     dev: true
 
   /wcwidth/1.0.1:

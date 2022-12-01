@@ -1,1 +1,2 @@
-export { rehypeBreakSplit } from "./plugin";
+export * from "./rehype-break-split";
+export * from "./remark-shiki";
