@@ -1,15 +1,34 @@
-import { PropsWithChildren } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const Highlight = ({ children }: PropsWithChildren) => {
-	return <span style={{ color: "#5b34da", fontSize: "2rem" }}>{children}</span>;
-};
+export const Highlight = styled.span`
+	color: var(--color-highlight);
+`;
 
-export const Layout = ({ children }: PropsWithChildren) => {
-	return <div style={{ margin: "0px", padding: "15px" }}>{children}</div>;
-};
+export const Layout = styled.div`
+	margin: 0px;
+	padding: 100px 25px;
+
+	height: 100%;
+	width: 100%;
+`;
+
+export const Container = styled.div`
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+`;
 
 export const Title = styled.h1`
-	font-size: 10rem;
+	font-size: 5rem;
 	letter-spacing: -5px;
+	font-family: "Iosevka";
+`;
+
+export const Spacer = styled.div<{ $size?: number }>`
+	${({ $size = 100 }) =>
+		$size &&
+		css`
+			height: ${$size}px;
+		`}
 `;

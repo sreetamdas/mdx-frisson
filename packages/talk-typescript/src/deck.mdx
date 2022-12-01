@@ -3,41 +3,49 @@
 {/* const Content = await compile(...).default */}
 {/* Content({components}) */}
 
-import { Title, Highlight } from "./components/shared";
+import { Spacer, Title, Container, Highlight } from "./components/shared";
 
-<Title>Hello World!</Title>
+<Container>
+  <Title>Hello Beautiful Nerds!! 👋</Title>
+</Container>
 
 ---
 
-# Title
+# Fundamentals of TypeScript
 
-## Subheading
+---
 
-### Sub-section heading2
+# What is TypeScript?
 
-Normal text
+<ul>
+  <Steps>
+    <li>All JavaScript is valid!</li>
+    <li>You don't need to rewrite all of your code immediately</li>
+    <li>*Static* type checker</li>
+    <li>
+      Additional <Highlight>**types**</Highlight>
+    </li>
+    <li>Detect errors in code *without* running it</li>
+    <li>
+      Based on the <Highlight>types</Highlight> of values being operated on
+    </li>
+  </Steps>
+</ul>
 
-<SpeakerNotes>
+<Notes>
 
 Some important, vital info.
 
 Possibly with some <code>code sprinked in</code>? How about some `markdown goodness`?
 
-</SpeakerNotes>
+</Notes>
 
 ---
 
-## Third page's heading
+# A code block
 
-- First item
-- Second item
-
-<hr></hr>
-
-<Highlight>It&apos;s all purple! A React component!</Highlight>
-
-<Highlight>
-
-## Markdown inside JSX
-
-</Highlight>
+```ts
+function name(params: string) {
+  console.log("Hello World!");
+}
+```

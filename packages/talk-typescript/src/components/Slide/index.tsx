@@ -6,8 +6,6 @@ const StyledSlide = styled.div<StyledSlideProps>`
 	height: 100%;
 	margin: 0;
 
-	border: 5px solid orange;
-
 	${({ $active }) =>
 		$active
 			? css`

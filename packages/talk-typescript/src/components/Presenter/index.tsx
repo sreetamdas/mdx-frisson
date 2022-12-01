@@ -42,6 +42,8 @@ export const PresenterMode = (props: Props) => {
 	);
 };
 
-export const SpeakerNotes = ({ children }) => {
-	return <div>{children}</div>;
+export const Notes = (props) => {
+	console.log("speaker notes", props);
+
+	return;
 };

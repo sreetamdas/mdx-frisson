@@ -5,5 +5,6 @@ export const Main = styled.main.attrs({ id: "mdx-slides-main" })`
 `;
 
 export const StyledDeck = styled.section`
-	border: 5px solid darkolivegreen;
+	height: 100%;
+	width: 100%;
 `;

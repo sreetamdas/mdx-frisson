@@ -1,13 +1,17 @@
 :root {
 	--background-color: hsl(0, 0%, 100%);
 	--primary-foreground-color: hsl(0, 0%, 0%);
-	--code-background-color: hsl(0, 0%, 86%);
+	--code-background-color: hsl(216, 33%, 6%);
+
+	--color-highlight: hsl(254, 69%, 53%);
 }
 @media (prefers-color-scheme: dark) {
 	:root {
 		--background-color: hsl(0, 0%, 0%);
 		--primary-foreground-color: hsl(0, 0%, 100%);
-		--code-background-color: hsl(0, 0%, 20%);
+		--code-background-color: hsl(216, 33%, 6%);
+
+		--color-highlight: hsl(186, 69%, 53%);
 	}
 }
 
@@ -16,9 +20,8 @@ body {
 	height: 100%;
 }
 body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-		sans-serif;
+	font-family: "Iosevka", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 
@@ -30,15 +33,21 @@ body {
 }
 
 code {
-	font-family: "ui-monospace", Consolas, "Roboto Mono", Menlo, Monaco, monospace;
+	font-family: "Iosevka", "ui-monospace", Consolas, "Roboto Mono", Menlo, Monaco, monospace;
 	background-color: var(--code-background-color);
+	color: hsl(21, 100%, 50%);
 	font-size: 0.75em;
 	padding: 0.2em;
 	border-radius: 3px;
 	/* prevent our code block from being broken into different sections on linebreak
-			https://developer.mozilla.org/en-US/docs/Web/CSS/box-decoration-break */
+	https://developer.mozilla.org/en-US/docs/Web/CSS/box-decoration-break */
 	box-decoration-break: clone;
-	white-space: nowrap;
+	/* white-space: nowrap; */
+}
+
+pre > code {
+	display: grid;
+	/* background-color: ; */
 }
 
 *,
