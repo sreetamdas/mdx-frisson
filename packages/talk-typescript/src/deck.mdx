@@ -42,10 +42,500 @@ Possibly with some <code>code sprinked in</code>? How about some `markdown goodn
 
 ---
 
-# A code block
+# Static typing ƒor variables
 
 ```ts
-function name(params: string) {
-  console.log("Hello World!");
+let message: string = "Hello, world!";
+let count: number = 10;
+```
+
+---
+
+# Static typing ƒor variables
+
+```ts
+let message: string = "Hello, world!";
+let count: number = 10;
+
+// This would cause a type error, because we are trying to
+// assign a number to a variable of type string
+message = 1234;
+```
+
+- TypeScript is kind of pretty smart???
+- Infer basic types from the declaration
+
+---
+
+# A simple JS function
+
+```ts
+function greet(name) {
+  console.log(`Hello ${name}!`);
 }
+
+greet("Pesto");
+// Hello Pesto!
+```
+
+---
+
+# Same but with TypeScript
+
+```ts
+function greet(name: string) {
+  console.log(`Hello ${name}!`);
+}
+
+greet("Pesto");
+// Hello Pesto!
+```
+
+---
+
+## /\* CodeSandbox \*/
+
+---
+
+## Basic types
+
+- JavaScript based types
+
+```ts
+let message: string = "Hello, world!";
+let count: number = 10;
+let isDone: boolean = false;
+let nothing: null = null;
+let nothing: undefined;
+```
+
+---
+
+## Arrays type
+
+```ts
+let numbers: number[] = [1, 2, 3, 4, 5];
+let messages: string[] = ["Hello", "world", "!"];
+let booleans: Array<boolean> = [true, false, true, true];
+```
+
+---
+
+## Tuples
+
+```ts
+// A tuple type with a fixed number of elements
+let pair: [string, number] = ["hello", 42];
+
+// A tuple type with optional elements
+let triple: [string, number, boolean?] = ["hello", 42];
+```
+
+---
+
+## And you can combine them as well
+
+```ts
+let people: Array<{
+  name: string;
+  likes: Array<string>;
+  likesWindows: boolean;
+}> = [
+  { name: "Sreetam", likes: ["laptop stickers"], likesWindows: false },
+  { name: "Megha", likes: ["subtelty", "UX"], likesWindows: false },
+];
+```
+
+---
+
+## Optional properties
+
+```ts {4,7}
+let people: Array<{
+  name: string;
+  likes: Array<string>;
+  likesWindows?: boolean;
+}> = [
+  { name: "Sreetam", likes: ["laptop stickers"], likesWindows: false },
+  { name: "Megha", likes: ["subtelty", "UX"] },
+];
+```
+
+---
+
+## Usage
+
+```ts
+function peopleDescription(
+  input: Array<{
+    name: string;
+    likes: Array<string>;
+    likesWindows?: boolean;
+  }>
+) {
+  input.forEach((person) => {
+    const { name, likes, likesWindows } = person;
+    let description = `${name} likes ${likes.join(", ")}`;
+
+    console.log(description);
+  });
+}
+```
+
+---
+
+## Usage
+
+```ts {11-13,16}
+function peopleDescription(
+  input: Array<{
+    name: string;
+    likes: Array<string>;
+    likesWindows?: boolean;
+  }>
+) {
+  input.forEach((person) => {
+    const { name, likes, likesWindows } = person;
+
+    function getOpinionOnWindows(opinion?: boolean) {
+      return opinion ? " and likes Windows" : "";
+    }
+
+    let description = `${name} likes ${likes.join(", ")}`;
+    description += getOpinionOnWindows(likesWindows);
+
+    console.log(description);
+  });
+}
+```
+
+---
+
+## Usage
+
+```ts {12-13}
+function peopleDescription(
+  input: Array<{
+    name: string;
+    likes: Array<string>;
+    likesWindows?: boolean;
+  }>
+) {
+  input.forEach((person) => {
+    const { name, likes, likesWindows } = person;
+
+    function getOpinionOnWindows(opinion?: boolean) {
+      if (typeof opinion === "undefined")
+        return " and has no opinion on Windows";
+
+      return opinion ? " and likes Windows" : "";
+    }
+
+    let description = `${name} likes ${likes.join(", ")}`;
+    description += getOpinionOnWindows(likesWindows);
+
+    console.log(description);
+  });
+}
+```
+
+---
+
+## Type alias
+
+```ts
+let people: Array<{
+  name: string;
+  likes: Array<string>;
+  likesWindows?: boolean;
+}> = [
+  { name: "Sreetam", likes: ["laptop stickers"], likesWindows: false },
+  { name: "Megha", likes: ["subtelty", "UX"] },
+];
+```
+
+---
+
+## Type alias
+
+```ts {1-5,7}
+type Person = {
+  name: string;
+  likes: Array<string>;
+  likesWindows?: boolean;
+};
+
+type People = Array<Person>;
+
+let people: People = [
+  { name: "Sreetam", likes: ["laptop stickers"], likesWindows: false },
+  { name: "Megha", likes: ["subtelty", "UX"] },
+];
+```
+
+---
+
+## Type alias
+
+```ts {1,3}
+function peopleDescription(input: People) {
+  input.forEach((person) => {
+    function getOpinionOnWindows(opinion: Person["likesWindows"]) {
+      //
+    }
+  });
+}
+```
+
+---
+
+## Union types
+
+- Type that can be one of several different types
+- Useful when value can have multiple types
+- Handle each type differently
+
+---
+
+```ts
+function formatName(name: string | string[]) {
+  if (typeof name === "string") {
+    return name;
+  } else {
+    return name.join(" ");
+  }
+}
+
+formatName("Sreetam"); // Sreetam
+formatName(["Sreetam", "Swapnil"]); // Sreetam Swapnil
+```
+
+---
+
+## Type guards
+
+- Narrow the type of a value
+
+```ts
+function formatName(name: string | string[]) {
+  if (typeof name === "string") {
+    // type is narrowed to string within this block
+    return name;
+  } else {
+    // narrowed to string[] within this block
+    return name.join(" ");
+  }
+}
+```
+
+---
+
+## Another example for Type guards
+
+---
+
+## Type assertions
+
+- Provide info back to the compiler
+
+---
+
+```ts
+const arr = [2, 4, 6];
+
+type Result = {
+  "place-0": number;
+  "place-1": number;
+  "place-2": number;
+};
+// Type '{}' is missing the following properties from type 'Result':
+// 'place-0', 'place-1', 'place-2'
+const res: Result = arr.reduce((acc, curr, i) => {
+  acc[`place-${i}`] = curr;
+
+  return acc;
+}, {});
+```
+
+---
+
+```ts {12}
+const arr = [2, 4, 6];
+
+type Result = {
+  "place-0": number;
+  "place-1": number;
+  "place-2": number;
+};
+const res: Result = arr.reduce((acc, curr, i) => {
+  acc[`place-${i}`] = curr;
+
+  return acc;
+}, {} as Result);
+```
+
+---
+
+## `any`
+
+- Don’t want a particular value to cause errors
+- Can be literally `any`thing
+
+```ts
+function getValue(key: string) {
+  // We don't know the type of the value, so we use the `any` type
+  let value: any = getValueFromObject(key);
+
+  // We can access any property or method on the value
+  let upperCaseValue = value.toUpperCase();
+
+  return upperCaseValue;
+}
+```
+
+---
+
+## Interfaces
+
+- Similar, almost interchangeably with Type aliases
+- Contracts with objects
+- Ensure consistent structure
+- Main difference: interfaces are extendable using `extend`
+
+---
+
+```ts
+interface User {
+  name: string;
+  age: number;
+  email: string;
+}
+
+function getUserInfo(user: User) {
+  return `${user.name} is ${user.age} years old and can be 
+  contacted at ${user.email}.`;
+}
+```
+
+---
+
+```ts
+let user1 = {
+  name: "John Doe",
+  age: 30,
+  email: "john.doe@example.com",
+};
+
+let user2 = {
+  name: "Jane Doe",
+  age: 25,
+};
+```
+
+---
+
+```ts
+console.log(getUserInfo(user1));
+// No problems
+
+console.log(getUserInfo(user2));
+// Argument of type '{ name: string; age: number; }' is not assignable
+// to parameter of type 'User'.
+//  Property 'email' is missing in type '{ name: string; age: number; }'
+//  but required in type 'User'.(2345)
+```
+
+---
+
+```ts
+interface HyperUser extends User {
+  multiFactorAuth: boolean;
+}
+```
+
+---
+
+## More "fun" types
+
+- Types from types
+- Utility types
+- Enums
+- Generics
+- Literals
+- `unknown`, `never`, `void`
+
+---
+
+## Types from types: `keyof`
+
+```ts
+type UserKeys = keyof User;
+
+// a union type containing the keys of the User interface
+// UserKeys is equivalent to "name" | "age" | "email"
+let userKey: UserKeys = "name";
+userKey = "age";
+userKey = "email";
+
+userKey = "phone";
+// Error: "phone" is not one of the keys of the User interface
+// Type '"phone"' is not assignable to type 'keyof User'
+```
+
+---
+
+## Types from types: `typeof`
+
+```ts
+let user2 = {
+  name: "Cassidy",
+  age: 30,
+};
+type User2 = typeof user2;
+// {
+//     name: string;
+//     age: number;
+// }
+```
+
+---
+
+## For opening up a object's keys
+
+```ts
+interface UserDetails {
+  [property: string]: {
+    name: string;
+    primary: boolean;
+  };
+}
+
+let userDetails: UserDetails = {
+  id: {
+    name: "ID",
+    primary: true,
+  },
+  rollNumber: {
+    name: "Roll no.",
+    primary: false,
+  },
+};
+```
+
+---
+
+## Combining them, in a real world implementation
+
+```ts
+const pages = {
+  entry: "/",
+  notFound: "error404",
+  sourceCode: "source-code",
+} as const;
+
+type PageKeys = keyof typeof pages;
+// "entry" | "notFound" | "sourceCode"
+
+type PageValues = typeof pages[keyof typeof pages];
+// "/" | "error404" | "source-code"
 ```
