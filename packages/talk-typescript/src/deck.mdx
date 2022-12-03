@@ -395,6 +395,19 @@ function getValue(key: string) {
 
 ---
 
+```ts
+interface User {
+  name: string;
+  age: number;
+  email: string;
+  additionalInfo: any;
+  // We do not know what this might be
+  // and we do not care 🤷
+}
+```
+
+---
+
 ## Interfaces
 
 - Similar, almost interchangeably with Type aliases
@@ -459,10 +472,9 @@ interface HyperUser extends User {
 
 - Types from types
 - Utility types
-- Enums
 - Generics
 - Literals
-- `unknown`, `never`, `void`
+- `unknown`, `never`, `void`, `readonly`
 
 ---
 
@@ -524,7 +536,7 @@ let userDetails: UserDetails = {
 
 ---
 
-## Combining them, in a real world implementation
+## Combining them
 
 ```ts
 const pages = {
@@ -539,3 +551,257 @@ type PageKeys = keyof typeof pages;
 type PageValues = typeof pages[keyof typeof pages];
 // "/" | "error404" | "source-code"
 ```
+
+---
+
+## `as const`
+
+- Most strict / _narrowest_ type infer
+- When you want to stay as close as possible to the actual values
+
+---
+
+## Mapped types
+
+- Another object, but as a map of it's properties
+
+---
+
+```ts
+type UserInfo = {
+  name: string;
+  verified: boolean;
+  username: string;
+};
+
+type UserHasInfo = {
+  [Property in keyof UserInfo]: boolean;
+}; // same as:
+type UserHasInfo = {
+  name: boolean;
+  verified: boolean;
+  username: boolean;
+};
+```
+
+---
+
+## Literal types
+
+```ts
+type PrivateKey = `private_key_${string}`;
+```
+
+---
+
+## Questions?
+
+---
+
+## `unknown`
+
+- Represents any value
+- More restrictive than `any`
+- Cannot access without first checking its type
+
+```ts
+let value: unknown = "hello";
+// TS error
+console.log(value.toUpperCase());
+// first check the type of the value
+// before accessing its properties or methods
+if (typeof value === "string") {
+  console.log(value.toUpperCase()); // Output: "HELLO"
+}
+```
+
+---
+
+## `never`
+
+- Value that never occurs
+- Function never returns a value
+
+```ts
+function error(message: string): never {
+  throw new Error(message);
+}
+// This function does not return a value, so its return type is never
+function infiniteLoop(): never {
+  while (true) {
+    // ...
+  }
+}
+```
+
+---
+
+## `void`
+
+- Absence of a value.
+- Function that does not return a value
+
+```ts
+function printMessage(message: string): void {
+  console.log(message);
+}
+
+// This variable cannot be assigned a value, so its type is void
+let empty: void;
+
+// TS error: you cannot assign a value to a variable of type void
+empty = "hello";
+```
+
+---
+
+## `readonly`
+
+- Properties are read-only: cannot be reassigned
+
+```ts
+interface User {
+  readonly name: string;
+  readonly age: number;
+}
+let user: User = {
+  name: "John Doe",
+  age: 30,
+};
+// TS error: because the properties of user are read-only
+user.age = 35;
+```
+
+---
+
+## Utility types: `Readonly<Type>`
+
+```ts
+interface UpdatableUser {
+  name: string;
+  age: number;
+}
+let readonlyUser: Readonly<UpdatableUser> = {
+  name: "John Doe",
+  age: 30,
+};
+readonlyUser.age = 21; // TS error
+```
+
+---
+
+## Utility types: `Partial<Type>`
+
+```ts
+// Create a partial version of the User interface
+type PartialUser = Partial<User>;
+
+// The type of PartialUser is the same as the type of User,
+// but with all properties marked as optional
+let partialUser: PartialUser = {
+  name: "Tejas",
+};
+```
+
+---
+
+## Utility types: `Required<Type>`
+
+```ts
+type RequiredUser = Required<PartialUser>;
+
+// TS error: missing the following properties from
+// type 'Required<Partial<User>>': age, email
+let requiredUser: RequiredUser = {
+  name: "Tejas",
+};
+```
+
+---
+
+## Generics
+
+- Types that can work with multiple types
+- Utility types are generics
+
+```ts
+function identity<T>(value: T): T {
+  return value;
+}
+
+// Use the identity function with the string type
+let message = identity("hello"); // message has the type string
+
+// Use the identity function with the number type
+let number = identity(42); // number has the type number
+```
+
+---
+
+## Generics
+
+```ts {1}
+function identity<Type>(value: Type): Type {
+  return value;
+}
+
+// Use the identity function with the string type
+let message = identity("hello"); // message has the type string
+
+// Use the identity function with the number type
+let number = identity(42); // number has the type number
+```
+
+---
+
+## Generics
+
+```ts
+interface Pair<T, U> {
+  first: T;
+  second: U;
+}
+let pair: Pair<string, number> = {
+  first: "hello",
+  second: 42,
+};
+let anotherPair: Pair<boolean, string> = {
+  first: true,
+  second: "world",
+};
+```
+
+---
+
+## Generics
+
+```ts {1-4}
+interface Pair<FirstType, SecondType> {
+  first: FirstType;
+  second: SecondType;
+}
+let pair: Pair<string, number> = {
+  first: "hello",
+  second: 42,
+};
+let anotherPair: Pair<boolean, string> = {
+  first: true,
+  second: "world",
+};
+```
+
+---
+
+## Fin.
+
+---
+
+## Fin?
+
+---
+
+## tRPC
+
+---
+
+##
