@@ -6,16 +6,27 @@
 import { Spacer, Title, Container, Highlight } from "./components/shared";
 
 <Container>
-  <Title>Hello Beautiful Nerds!! 👋</Title>
+  <Title>Hello! 👋</Title>
 </Container>
 
 ---
 
-# Fundamentals of TypeScript
+<Container>
+  <Title>Sreetam Das</Title>
+  
+- Senior Frontend Engineer at Remote
+
+</Container>
 
 ---
 
-# What is TypeScript?
+<Container>
+  <Title>Fundamentals of TypeScript</Title>
+</Container>
+
+---
+
+## What is TypeScript?
 
 <ul>
   <Steps>
@@ -32,17 +43,41 @@ import { Spacer, Title, Container, Highlight } from "./components/shared";
   </Steps>
 </ul>
 
-<Notes>
+---
 
-Some important, vital info.
+## Why?
 
-Possibly with some <code>code sprinked in</code>? How about some `markdown goodness`?
-
-</Notes>
+- Improved code reliability and maintainability
+- Improved development experience
 
 ---
 
-# Static typing ƒor variables
+## Getting started with TS
+
+- `npm install typescript` in your project
+- [ts.new](https://ts.new)
+
+---
+
+## Getting started with TS: `tsconfig.json`
+
+```json
+// tsc --init
+
+{
+  "compilerOptions": {
+    "noImplicitAny": true, // disallow `any` type
+    "outDir": "dist" // output dir for compiled JS
+    // ...
+  },
+  "exclude": ["node_modules"],
+  "include": ["src"]
+}
+```
+
+---
+
+## Static typing ƒor variables
 
 ```ts
 let message: string = "Hello, world!";
@@ -51,23 +86,23 @@ let count: number = 10;
 
 ---
 
-# Static typing ƒor variables
+## Static typing ƒor variables
 
 ```ts
-let message: string = "Hello, world!";
-let count: number = 10;
+let message = "Hello, world!";
+let count = 10;
 
 // This would cause a type error, because we are trying to
 // assign a number to a variable of type string
 message = 1234;
 ```
 
-- TypeScript is kind of pretty smart???
+- TypeScript is kind of pretty smart!
 - Infer basic types from the declaration
 
 ---
 
-# A simple JS function
+## A simple JS function
 
 ```ts
 function greet(name) {
@@ -80,7 +115,7 @@ greet("Pesto");
 
 ---
 
-# Same but with TypeScript
+## Same but with TypeScript
 
 ```ts
 function greet(name: string) {
@@ -142,7 +177,7 @@ let people: Array<{
   likesWindows: boolean;
 }> = [
   { name: "Sreetam", likes: ["laptop stickers"], likesWindows: false },
-  { name: "Megha", likes: ["subtelty", "UX"], likesWindows: false },
+  { name: "Megha", likes: ["subtlety", "UX"], likesWindows: false },
 ];
 ```
 
@@ -157,7 +192,7 @@ let people: Array<{
   likesWindows?: boolean;
 }> = [
   { name: "Sreetam", likes: ["laptop stickers"], likesWindows: false },
-  { name: "Megha", likes: ["subtelty", "UX"] },
+  { name: "Megha", likes: ["subtlety", "UX"] },
 ];
 ```
 
@@ -250,7 +285,7 @@ let people: Array<{
   likesWindows?: boolean;
 }> = [
   { name: "Sreetam", likes: ["laptop stickers"], likesWindows: false },
-  { name: "Megha", likes: ["subtelty", "UX"] },
+  { name: "Megha", likes: ["subtlety", "UX"] },
 ];
 ```
 
@@ -269,7 +304,7 @@ type People = Array<Person>;
 
 let people: People = [
   { name: "Sreetam", likes: ["laptop stickers"], likesWindows: false },
-  { name: "Megha", likes: ["subtelty", "UX"] },
+  { name: "Megha", likes: ["subtlety", "UX"] },
 ];
 ```
 
@@ -792,16 +827,41 @@ let anotherPair: Pair<boolean, string> = {
 
 ---
 
-## Fin.
+<Container>
+  <Title>Fin.</Title>
+</Container>
 
 ---
 
-## Fin?
+<Container>
+  <Title>Fin?</Title>
+</Container>
 
 ---
 
-## tRPC
+- ## tRPC
+- ## Bubble sort in Types
+- and a lot more
 
 ---
 
-##
+## Resources
+
+- [TypeScript handbook](https://www.typescriptlang.org/docs/handbook/intro.html)
+- Lots of courses and guides on YouTube
+- even Twitter
+
+---
+
+## What I've used
+
+- [MDX _Frisson_](https://github.com/sreetamdas/mdx-frisson)
+- Iosevka font
+- [sreetamdas.com/uses](https://sreetamdas.com/uses)
+- @\_SreetamDas
+
+---
+
+<Container>
+  <Title>Ask my anything!</Title>
+</Container>

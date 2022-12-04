@@ -95,3 +95,10 @@ span.line.highlighted {
 	margin-left: -5px;
 	margin-right: -5px;
 }
+
+a {
+	color: var(--color-highlight);
+}
+a:visited {
+	text-decoration: none;
+}
